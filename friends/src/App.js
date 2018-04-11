@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import Friendform from './Friendform';
 
 class App extends Component {
 
@@ -38,6 +39,7 @@ class App extends Component {
             );
           })}
         </ul>
+          <Friendform />
       </div>
     );
   }
