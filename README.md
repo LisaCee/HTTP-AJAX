@@ -8,11 +8,11 @@ Topics:
 
 ## Instructions
 
-1. Run `npm i` inside the root directory of this project.
-2. Run `npm start` to start the server.
+DONE 1. Run `npm i` inside the root directory of this project.
+DONE 2. Run `npm start` to start the server.
 3. The provided server returns a list of friends when a `GET` request is made to [`http://localhost:5000/friends`](http://localhost:5000/friends).
-4. In a separate terminal window, run `create-react-app friends` to create your starter React application.
-5. Inside your React application, create a component to display the list of friends coming from the server.
+DONE 4. In a separate terminal window, run `create-react-app friends` to create your starter React application.
+DONE 5. Inside your React application, create a component to display the list of friends coming from the server.
 6. Add a form to gather information about a new friend.
 7. Add a button to save the new friend by making a `POST` request to the same endpoint listed above.
 7. Each `friend` should have the following properties:
