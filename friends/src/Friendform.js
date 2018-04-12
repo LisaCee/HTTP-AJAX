@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import axios from 'axios';
 
 class Friendform extends Component {
     constructor(props) {
@@ -12,24 +13,15 @@ class Friendform extends Component {
     }
   
     addFriend= event => {
-      // event.preventDefault();
-      // const newFriends = this.state.newFriend;
-      // this.state.friends.push(this.state.newFriend);
-      // this.setState({
-      //   newFriend : {
-      //     name: 'name',
-      //     age: 'age',
-      //     email: 'email' 
-      //  }
-      // });
-      // console.log(this.state)
+      axios
+        .post('http://localhost:5000/friends', this.state)
+        .then(function(response) {console.log(response);})
+        .catch(function(error) {console.log(error)});
     };
   
     handleNewFriend = event => {
       this.setState({ [event.target.name]: event.target.value});
       console.log("STATE", this.state);
-      // const newFriend = event.target.value;
-      // this.setState({ newFriend: newFriend });
     };
   
     render() {
@@ -48,7 +40,7 @@ class Friendform extends Component {
               <label>Email</label>
               <input type="email" name="email" onChange={this.handleNewFriend} />
             </FormGroup>
-            <Button>Submit</Button>
+            <Button onClick={this.addFriend}>Submit</Button>
           </Form>
         </div>
       );
