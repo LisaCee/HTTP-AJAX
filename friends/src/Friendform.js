@@ -2,27 +2,34 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class Friendform extends Component {
-    constructor() {
-      super();
+    constructor(props) {
+      super(props);
       this.state = {
-        friends: [],
-        newFriend: ""
+        name: '',
+        age: '',
+        email: '',
       };
     }
   
     addFriend= event => {
-      event.preventDefault();
-      const friends = this.state.friends;
-      friends.push(this.state.newFriend);
-      this.setState({
-        newFriend: "",
-        friends: friends
-      });
+      // event.preventDefault();
+      // const newFriends = this.state.newFriend;
+      // this.state.friends.push(this.state.newFriend);
+      // this.setState({
+      //   newFriend : {
+      //     name: 'name',
+      //     age: 'age',
+      //     email: 'email' 
+      //  }
+      // });
+      // console.log(this.state)
     };
   
     handleNewFriend = event => {
-      const newFriend = event.target.value;
-      this.setState({ newFriend: newFriend });
+      this.setState({ [event.target.name]: event.target.value});
+      console.log("STATE", this.state);
+      // const newFriend = event.target.value;
+      // this.setState({ newFriend: newFriend });
     };
   
     render() {
@@ -30,16 +37,16 @@ class Friendform extends Component {
         <div>
           <Form>
             <FormGroup>
-              <Label for="exampleName">Name</Label>
-              <Input type="text" name="name" id="exampleName" placeholder="friend's name" />
+              <label>Name</label>
+              <input type="text" name="name" onChange={this.handleNewFriend} />
             </FormGroup>
             <FormGroup>
-              <Label for="exampleAge">Age</Label>
-              <Input type="number" name="age" id="exampleAge" placeholder="friend's age" />
+              <label>Age</label>
+              <input type="number" name="age" onChange={this.handleNewFriend} />
             </FormGroup>
             <FormGroup>
-              <Label for="exampleEmail">Email</Label>
-              <Input type="email" name="email" id="exampleEmail" placeholder="friend's email" />
+              <label>Email</label>
+              <input type="email" name="email" onChange={this.handleNewFriend} />
             </FormGroup>
             <Button>Submit</Button>
           </Form>
