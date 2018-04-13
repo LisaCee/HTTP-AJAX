@@ -1,0 +1,21 @@
+.friend-title {
+  font-size: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.friend {
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid black;
+  display: inline-block;
+  padding: 1%;
+}
+
+.form {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
